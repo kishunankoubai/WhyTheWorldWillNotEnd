@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/PageManager.css" />
+        <link rel="stylesheet" href="css/PageThema.css" />
+        <link rel="stylesheet" href="css/PageLayout.css" />
+        <link rel="stylesheet" href="css/PageAnimation.css" />
+        <link rel="stylesheet" href="css/SelectLayout.css" />
+        <link rel="shortcut icon" href="assets/icon/WhyTheWorldWillNotEndIcon.png" type="image/x-icon" />
+        <title>世界が滅ばない理由。</title>
+    </head>
+    <body data-initial-page="pageStartLoading">
+        <div id="invalidPanel">
+            <div class="label">読み込み中</div>
+            <div id="loadingCircle">...</div>
+        </div>
+
+        <div class="page" id="pageStartLoading">
+            <div class="label">フォント読み込み中</div>
+        </div>
+
+        <div class="page" id="pageStart">
+            <!-- prettier-ignore -->
+            <div class="label autoDynamicText" id="pageStartLabel">クリックで始める。</div>
+            <div class="label">(音が出ます)</div>
+        </div>
+
+        <div class="page" id="title">
+            <div class="label headingLabel">世界が滅ばない理由。</div>
+            <div class="container" data-direction="row">
+                <button data-mapping="[1,0]" data-page="settings">設定</button>
+                <button data-mapping="[2,0]" id="startButton">始める</button>
+                <button data-mapping="[3,0]" data-page="special" id="specialButton" style="display: none">オマケ</button>
+            </div>
+            <button class="back" data-mapping="[0,1]">戻る</button>
+        </div>
+
+        <div class="page" id="talk" data-layer="11">
+            <!-- <button class="menuButton" data-page="menu">Menu</button> -->
+            <div id="talkPanelBase">
+                <div id="namePanel"></div>
+                <div id="talkPanel" data-mapping="[0,0]"></div>
+            </div>
+        </div>
+
+        <div class="page" id="scene0"></div>
+        <div class="page" id="scene1-1"></div>
+        <div class="page" id="scene1-2"></div>
+        <div class="page" id="scene2"></div>
+        <div class="page" id="scene3"></div>
+        <div class="page" id="scene4"></div>
+        <div class="page" id="scene5"></div>
+        <div class="page" id="scene6"></div>
+
+        <div class="page" id="ending0">
+            <div class="text">
+                企画：うめぼし<br />
+                プログラミング：うめぼし<br />
+                ストーリー：うめぼし
+            </div>
+        </div>
+        <div class="page" id="ending1">
+            <div class="text">
+                BGM・SE：うめぼし<br />
+                絵：うめぼし
+            </div>
+        </div>
+        <div class="page" id="ending2">
+            <div class="text">
+                テクスチャ：フリーテクスチャ素材館<br />
+                フォント：Shippori Mincho B1
+            </div>
+        </div>
+        <div class="page" id="ending3">
+            <div class="text">制作：マイコン研究会(MCR)</div>
+        </div>
+
+        <div class="page" id="play">
+            <div class="container">
+                <div class="label">論証を正しくしてください</div>
+                <div class="text" id="reasonText"></div>
+                <div class="text" id="goalText"></div>
+            </div>
+            <div class="container">
+                <div class="label">言葉一覧</div>
+                <div class="text" id="wordListText"></div>
+                <div class="container">
+                    <div class="label">ルール</div>
+                    <div class="text" id="descriptionText"><font style="color: #44d">青い文章</font>は常に正しい</div>
+                </div>
+                <button id="reasonCheckButton" data-mapping="[0,0]">確認</button>
+            </div>
+        </div>
+
+        <div class="page" id="wordSelect" data-layer="1">
+            <div class="label headingLabel">入れる言葉を選んでください</div>
+            <div class="container" data-direction="row"></div>
+            <button class="back" data-mapping="[-1,1]">戻る</button>
+        </div>
+
+        <div class="page" id="correctAnswer" data-layer="1">
+            <div class="label">正解</div>
+        </div>
+
+        <div class="page" id="incorrectAnswer" data-layer="1">
+            <div class="popup">
+                <div class="label headingLabel">不正解</div>
+                <div class="text">どこかが間違っています<br /></div>
+                <div class="container">
+                    <button data-mapping="[0,0]" data-back="1">戻る</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="page" id="denyAnswer" data-layer="1">
+            <div class="popup">
+                <div class="label headingLabel">世界は滅ばない</div>
+                <div class="text">………<br /></div>
+                <div class="container">
+                    <button data-mapping="[0,0]" data-back="1">戻る</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="page" id="startEffect" data-layer="1">
+            <div id="startEffectBase"></div>
+        </div>
+        <div class="page" id="howToPlay">
+            <div class="label headingLabel">遊び方</div>
+            <div class="text">
+                このゲームは論証を正しくするノベルゲームです。<br />
+                上から順番に文が並べられていますので、空いている部分に<br />
+                いい感じに言葉を入れて、論証を完成させてください。 <br />
+                ただし、青く書かれた文章は正しいことを前提とします。<br />
+                「三段論法」、「背理法」、「対偶」、「爆発律」などを<br />
+                駆使して論証を正しくしましょう。<br />
+                (もちろん、排中律などは認めています。)
+            </div>
+            <button class="back" data-mapping="[0,0]">戻る</button>
+        </div>
+
+        <div class="page" id="settings">
+            <div class="label headingLabel">設定</div>
+            <div class="selectWithDescription">
+                <div class="container" data-direction="row">
+                    <button data-page="volumeSetting" data-mapping="[0,0]">音量設定</button>
+                    <button data-page="dataSetting" data-mapping="[1,0]">データ管理</button>
+                    <button data-page="howToPlay" data-mapping="[2,0]">遊び方</button>
+                </div>
+            </div>
+            <button class="back" data-mapping="[-1,1]">戻る</button>
+        </div>
+
+        <div class="page" id="volumeSetting">
+            <div class="label headingLabel">音量設定</div>
+            <div class="container">
+                <div class="rangeContainer" data-mapping="[0,0]">
+                    <label for="bgmVolume">BGM:</label>
+                    <input type="range" id="bgmVolume" min="0" max="10" value="10" />
+                </div>
+                <div class="rangeContainer" data-mapping="[0,1]">
+                    <label for="seVolume">SE:</label>
+                    <input type="range" id="seVolume" min="0" max="10" value="10" />
+                </div>
+            </div>
+
+            <button class="back" data-mapping="[0,2]">戻る</button>
+        </div>
+
+        <div class="page" id="dataSetting">
+            <div class="label headingLabel">データ管理</div>
+            <div class="label" id="dataInformation"></div>
+            <button class="back" data-mapping="[-1,1]">戻る</button>
+            <div class="container">
+                <div class="text">最初からプレイするためにはデータを削除してください。</div>
+                <button data-page="allDataDeleteAlert" data-mapping="[0,0]">データを削除する</button>
+            </div>
+        </div>
+
+        <div class="page" id="allDataDeleteAlert" data-layer="1">
+            <div class="popup">
+                <div class="label headingLabel">削除確認</div>
+                <div class="text">全てのデータを削除します。<br /></div>
+                <button class="back" data-mapping="[0,1]">戻る</button>
+                <div class="container">
+                    <button data-mapping="[1,0]" id="allDataDeleteConfirmButton">削除する</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="page" id="special">
+            <div class="label headingLabel">オマケ</div>
+            <div class="text">
+                <font style="color: #4444ff">このゲームは面白い。</font><br />
+                よって、このゲームは面白い。
+            </div>
+            <button class="back" data-mapping="[0,1]">戻る</button>
+        </div>
+
+        <script src="dist/Run.js" type="module"></script>
+    </body>
+</html>

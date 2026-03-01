@@ -1,0 +1,210 @@
+#pageStart {
+    & .label:nth-child(2) {
+        font-size: 3vh;
+    }
+}
+
+#title {
+    & .headingLabel {
+        top: 15vh;
+        font-size: 11vh;
+        background: none;
+        border: none;
+        color: #441111;
+        margin-right: -5vh;
+    }
+    & .container {
+        transform: translateY(5vh);
+        gap: 10vh;
+        & button {
+            font-size: 7vh;
+        }
+    }
+}
+
+#play {
+    /* background-color: #eee; */
+    flex-direction: row;
+    gap: 0vh;
+    & .container:nth-child(1) {
+        width: 75%;
+        height: 100%;
+        background-color: #333333;
+        & .label {
+            margin-top: 5vh;
+        }
+        & #reasonText {
+            margin-bottom: auto;
+            margin-left: 5vh;
+            margin-right: auto;
+
+            & .answerBox {
+                display: inline;
+                border: #dddddd 0.7vh solid;
+                width: 15vh;
+                min-width: fit-content;
+                height: 7vh;
+                font-size: 4.5vh;
+                text-align: center;
+                line-height: 0vh;
+                padding-left: 1vh;
+                padding-right: 1vh;
+                box-shadow: none;
+                &:active {
+                    scale: 1;
+                }
+                &:focus {
+                    scale: 1;
+                }
+            }
+        }
+        & #goalText {
+            position: absolute;
+            bottom: 7vh;
+            left: 7vh;
+            font-size: 7.5vh;
+        }
+    }
+    & .container:nth-child(2) {
+        width: 25%;
+        height: 100%;
+        background-color: #888;
+        box-shadow: 0 0 2vh #666;
+        & .label {
+            font-size: 6vh;
+            color: #882222;
+        }
+        & #wordListText {
+            height: 43%;
+            font-size: 5vh;
+        }
+        & .container {
+            justify-content: flex-start;
+            height: 32%;
+            gap: 1vh;
+            font-size: 3vh;
+            & * {
+                font-size: 3vh;
+            }
+        }
+        & #reasonCheckButton {
+            position: absolute;
+            bottom: 6vh;
+            font-size: 8vh;
+            color: #882222;
+        }
+    }
+}
+
+#wordSelect {
+    background-color: #888d;
+}
+
+#talkPanel {
+    &:active {
+        scale: 1;
+        background: none;
+        filter: none;
+        border-radius: 0;
+    }
+    &:focus {
+        scale: 1;
+        background: none;
+        border-radius: 0;
+    }
+}
+#correctAnswer {
+    background-color: #0000;
+    & .label {
+        font-size: 30vh;
+        background-color: #662222;
+        border: #441111 solid 0.5vh;
+    }
+}
+
+#incorrectAnswer .popup {
+    width: 70vh;
+    height: 50vh;
+    & button {
+        position: absolute;
+        bottom: 7vh;
+    }
+}
+
+#scene0,
+#scene1-1,
+#scene1-2,
+#scene2,
+#scene3,
+#scene4,
+#scene5,
+#scene6 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* image-rendering: pixelated; */
+    filter: brightness(0.7) blur(0.3vh);
+}
+
+#scene1-1 {
+    background-image: url("../assets/images/backgrounds/scene1-1.png");
+    filter: brightness(0.7) blur(2vh);
+}
+#scene1-2 {
+    background-image: url("../assets/images/backgrounds/scene1-2.png");
+}
+#scene2 {
+    background-image: url("../assets/images/backgrounds/scene2.png");
+}
+#scene3 {
+    background-image: url("../assets/images/backgrounds/scene3.png");
+}
+#scene4 {
+    background-image: url("../assets/images/backgrounds/scene4.png");
+}
+#scene5 {
+    background-image: url("../assets/images/backgrounds/scene5.png");
+}
+#scene6 {
+    background-image: url("../assets/images/backgrounds/scene6.png");
+}
+
+#startEffect {
+    background-color: #00000000;
+    & #startEffectBase {
+        background-color: #eeaa0066;
+        border: #eeaa0099 1vh solid;
+        height: 20vh;
+        width: 120%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & .startEffectLabel {
+            /* line-height: 20vh; */
+            font-family: "RocknRoll One", Arial;
+            text-align: center;
+            font-size: 20vh;
+            margin-bottom: 3vh;
+        }
+        & #startLabel {
+            font-family: "RocknRoll One", Arial;
+            text-align: center;
+            font-size: 20vh;
+            color: #ee8888;
+        }
+    }
+}
+
+#settings {
+    & .container {
+        margin-top: 10vh;
+        gap: 7vh;
+        & button {
+            font-size: 7vh;
+        }
+    }
+}
+
+#allDataDeleteConfirmButton {
+    color: #882222;
+    font-size: 8vh;
+}

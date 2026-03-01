@@ -1,0 +1,308 @@
+@import url("https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap");
+* {
+    font-family: "Shippori Mincho B1", "Arial";
+    font-size: 5.5vh;
+    align-items: center;
+    justify-content: center;
+    color: #ddd;
+    text-wrap: nowrap;
+}
+
+html {
+    min-height: 0;
+    min-width: 0;
+    background-color: #555;
+    &::before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: "";
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background-image:
+            linear-gradient(0deg, #0000 24%, #0002 25%, #0002 26%, #0000 27%, #0000 74%, #0002 75%, #0002 76%, #0000 77%), linear-gradient(90deg, #0000 49%, #0002 50%, #0002 51%, #0000 52%);
+        background-size: 8vh 8vh;
+        background-position:
+            0 0,
+            10vh 0;
+    }
+}
+
+body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 100%;
+    aspect-ratio: 14/9;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 0;
+    min-height: 0;
+    /* background-color: #ddeeee44; */
+    background-color: #444;
+    border: 0.5vh #333333 dashed;
+    border-radius: 1vh;
+    &::before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: "";
+        inset: 0;
+        background-image: url("../assets/images/backgrounds/Suede-bk.jpg");
+        background-repeat: repeat;
+        background-size: cover;
+        opacity: 0.25;
+        mix-blend-mode: screen;
+        z-index: 1000;
+        pointer-events: none;
+        /* opacity: 0.05; */
+    }
+}
+
+.page {
+    gap: 3vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vh;
+    &[data-direction="row"] {
+        flex-direction: row;
+    }
+}
+
+.label {
+    text-align: center;
+}
+
+.headingLabel {
+    background-color: #ddd;
+    position: absolute;
+    padding: 0.5vh;
+    padding-left: 7vh;
+    padding-right: 7vh;
+    top: 5vh;
+    font-size: 8vh;
+    border: 0.5vh dashed #888;
+    border-radius: 0.5vh;
+    color: #333;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    /* background-color: #0000; */
+    background-color: #dddddd;
+    box-shadow: #dddd 0 0 1.5vh;
+    border-radius: 1vh;
+    color: #444;
+}
+
+[data-mapping] {
+    cursor: pointer;
+    &:focus {
+        outline: none;
+        border: none;
+        border-radius: 1vh;
+        background-color: #d448;
+        box-shadow: #d448 0 0 1.5vh;
+        transition:
+            scale 150ms ease-in-out,
+            background-color 150ms ease-in-out,
+            box-shadow 150ms ease-in-out;
+        scale: 1.2;
+    }
+    &:active {
+        scale: 0.95;
+        filter: brightness(0.7);
+        transition: scale 100ms ease-out;
+    }
+}
+
+.back {
+    position: absolute;
+    bottom: 3vh;
+    left: 6vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    padding-top: 0.2vh;
+    padding-bottom: 0.2vh;
+}
+
+#title {
+    /* background-color: #eea; */
+    & .options {
+        margin-top: 10vh;
+    }
+}
+
+#talk {
+    & #talkPanelBase {
+        scale: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        position: absolute;
+        bottom: 5vh;
+        height: 40vh;
+        width: 121vh;
+        min-height: 0;
+        min-width: 0;
+        & #namePanel {
+            height: 20%;
+            aspect-ratio: 5 / 1;
+            border: #222a 0.4vh solid;
+            background-color: #666a;
+            font-size: 6vh;
+            box-shadow: 1vh 1vh 2vh #33333366;
+        }
+        & #talkPanel {
+            display: block;
+            height: 80%;
+            width: 100%;
+            border: #222a 0.3vh solid;
+            background-color: #777a;
+            text-align: left;
+            align-items: start;
+            justify-content: left;
+            overflow-wrap: anywhere;
+            padding-top: 2vh;
+            padding-left: 3vh;
+            padding-right: 3vh;
+            font-size: 5.5vh;
+            line-height: 1.6;
+            text-wrap: wrap;
+            & * {
+                text-wrap: wrap;
+            }
+            box-shadow: 1vh 1vh 2vh #33333366;
+            & ruby {
+                & rt {
+                    font-size: 2.5vh;
+                }
+            }
+        }
+    }
+}
+
+.text {
+    text-wrap: wrap;
+}
+
+#invalidPanel {
+    background-color: #444;
+    z-index: 100;
+    & .label {
+        font-size: 7vh;
+    }
+    & #loadingCircle {
+        font-size: 13vh;
+    }
+}
+
+.rangeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    & label {
+        width: 20vh;
+        flex: 0 0 auto;
+        margin-right: 3vh;
+        text-align: center;
+    }
+    & input {
+        width: 25vh;
+        height: 2vh;
+        -webkit-appearance: none;
+        appearance: none;
+        background: #ba5;
+        border-radius: 2vh;
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 4vh;
+            height: 4vh;
+            background: #eee;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        &::-moz-range-thumb {
+            width: 4vh;
+            height: 4vh;
+            background: #eee;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+    }
+    &:active {
+        scale: 1;
+        filter: brightness(0.8);
+        transition: scale 100ms ease-out;
+    }
+    &:focus {
+        scale: 1;
+    }
+}
+
+.subPage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    & .text {
+        font-size: 4vh;
+        & b {
+            font-size: 4vh;
+        }
+    }
+}
+
+.subPageController {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10vh;
+    position: absolute;
+    bottom: 4vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page:has(.popup) {
+    background-color: #0000;
+    & .popup {
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        background-color: #888;
+        width: 80%;
+        height: 80%;
+        & .headingLabel {
+            padding: 0.5vh;
+            padding-left: 7vh;
+            padding-right: 7vh;
+            border: 0.5vh dashed #888;
+            font-size: 6vh;
+        }
+        & .text {
+            font-size: 5vh;
+        }
+        padding: 3vh;
+        border: 0.5vh #333 solid;
+        box-shadow: 0 0 3vh #4446;
+        position: relative;
+    }
+}
