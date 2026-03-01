@@ -208,3 +208,15 @@
     color: #882222;
     font-size: 8vh;
 }
+
+#aspectRatioIsTooSmall {
+    display: none;
+    background-color: #444;
+    animation: none;
+}
+
+@media (max-aspect-ratio: 14/9) {
+    #aspectRatioIsTooSmall {
+        display: flex;
+    }
+}
